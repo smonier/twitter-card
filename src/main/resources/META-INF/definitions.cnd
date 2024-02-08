@@ -1,0 +1,25 @@
+<social = 'http://www.jahia.org/twitter/1.0'>
+<jnt = 'http://www.jahia.org/jahia/nt/1.0'>
+<jmix = 'http://www.jahia.org/jahia/mix/1.0'>
+
+[jmix:twitterCardApp] > jmix:dynamicFieldset mixin
+extends = jmix:twitterCard
+  - social:twitterAppIdiPhone (string)
+  - social:twitterAppIdiPad (string)
+  - social:twitterAppIdGooglePlay (string)
+
+[jmix:twitterCardPlayer] > jmix:dynamicFieldset mixin
+extends = jmix:twitterCard
+  - social:twitterPlayer (string) = 'https://'
+  - social:twitterPlayerWidth (string) = '435'
+  - social:twitterPlayerHeight (string) = '251'
+
+[jmix:twitterCard] mixin
+ extends=jnt:content,jnt:page
+ itemtype=seo
+  - social:twitterCardType (string) indexed=no
+  - social:twitterSite (string)  = '@YourTwitterHandle'
+  - social:twitterTitle (string) internationalized nofulltext
+  - social:twitterDescription (string, textarea) internationalized nofulltext
+  - social:twitterImage (weakreference, picker[type='image']) internationalized < 'jmix:image'
+  - social:twitterCreator (string)  = '@AuthorTwitterHandle'

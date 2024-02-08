@@ -1,0 +1,55 @@
+{
+    "name": "jmix:twitterCard",
+    "description": "",
+    "dynamic": false,
+    "fields": [
+        {
+            "name": "social:twitterCardType",
+            "selectorType": "Choicelist",
+            "valueConstraints": [
+                {
+                    "value": {
+                        "type": "String",
+                        "value": "summary_large_image"
+                    },
+                    "displayValue": "summary_large_image",
+                    "propertyList": []
+                },
+                {
+                    "value": {
+                        "type": "String",
+                        "value": "summary"
+                    },
+                    "displayValue": "summary",
+                    "propertyList": []
+                },
+                {
+                    "value": {
+                        "type": "String",
+                        "value": "app"
+                    },
+                    "displayValue": "app",
+                    "propertyList": [
+                        {
+                            "name": "addMixin",
+                            "value": "jmix:twitterCardApp"
+                        }
+                    ]
+                },
+                {
+                    "value": {
+                        "type": "String",
+                        "value": "player"
+                    },
+                    "displayValue": "player",
+                    "propertyList": [
+                        {
+                            "name": "addMixin",
+                            "value": "jmix:twitterCardPlayer"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

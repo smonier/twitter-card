@@ -1,6 +1,6 @@
 {
     "name": "jmix:twitterCard",
-    "description": "",
+    "description": "Twitter Card Type selectorType",
     "dynamic": false,
     "fields": [
         {

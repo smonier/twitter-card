@@ -1,25 +1,27 @@
-<social = 'http://www.jahia.org/twitter/1.0'>
 <jnt = 'http://www.jahia.org/jahia/nt/1.0'>
 <jmix = 'http://www.jahia.org/jahia/mix/1.0'>
+<soc = 'http://modules.se.jahia.org/social/1.0'>
+<socialnt = 'http://modules.se.jahia.org/social/nt/1.0'>
+<socialmix = 'http://modules.se.jahia.org/social/mix/1.0'>
 
-[jmix:twitterCardApp] > jmix:dynamicFieldset mixin
-extends = jmix:twitterCard
-  - social:twitterAppIdiPhone (string)
-  - social:twitterAppIdiPad (string)
-  - social:twitterAppIdGooglePlay (string)
+[socialmix:twitterCardApp] > jmix:dynamicFieldset mixin
+extends = socialmix:twitterCard
+  - soc:twitterAppIdiPhone (string)
+  - soc:twitterAppIdiPad (string)
+  - soc:twitterAppIdGooglePlay (string)
 
-[jmix:twitterCardPlayer] > jmix:dynamicFieldset mixin
-extends = jmix:twitterCard
-  - social:twitterPlayer (string) = 'https://'
-  - social:twitterPlayerWidth (string) = '435'
-  - social:twitterPlayerHeight (string) = '251'
+[socialmix:twitterCardPlayer] > jmix:dynamicFieldset mixin
+extends = socialmix:twitterCard
+  - soc:twitterPlayer (string) = 'https://'
+  - soc:twitterPlayerWidth (string) = '435'
+  - soc:twitterPlayerHeight (string) = '251'
 
-[jmix:twitterCard] mixin
+[socialmix:twitterCard] mixin
  extends=jnt:content,jnt:page
  itemtype=seo
-  - social:twitterCardType (string) indexed=no
-  - social:twitterSite (string)  = '@YourTwitterHandle'
-  - social:twitterTitle (string) internationalized nofulltext
-  - social:twitterDescription (string, textarea) internationalized nofulltext
-  - social:twitterImage (weakreference, picker[type='image']) internationalized < 'jmix:image'
-  - social:twitterCreator (string)  = '@AuthorTwitterHandle'
+  - soc:twitterCardType (string) indexed=no
+  - soc:twitterSite (string)  = '@YourTwitterHandle'
+  - soc:twitterTitle (string) internationalized nofulltext
+  - soc:twitterDescription (string, textarea) internationalized nofulltext
+  - soc:twitterImage (weakreference, picker[type='image']) internationalized < 'jmix:image'
+  - soc:twitterCreator (string)  = '@AuthorTwitterHandle'

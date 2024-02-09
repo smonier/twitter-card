@@ -1,10 +1,10 @@
 {
-    "name": "jmix:twitterCard",
+    "name": "socialmix:twitterCard",
     "description": "Twitter Card Type selectorType",
     "dynamic": false,
     "fields": [
         {
-            "name": "social:twitterCardType",
+            "name": "soc:twitterCardType",
             "selectorType": "Choicelist",
             "valueConstraints": [
                 {
@@ -32,7 +32,7 @@
                     "propertyList": [
                         {
                             "name": "addMixin",
-                            "value": "jmix:twitterCardApp"
+                            "value": "socialmix:twitterCardApp"
                         }
                     ]
                 },
@@ -45,7 +45,7 @@
                     "propertyList": [
                         {
                             "name": "addMixin",
-                            "value": "jmix:twitterCardPlayer"
+                            "value": "socialmix:twitterCardPlayer"
                         }
                     ]
                 }

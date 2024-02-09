@@ -24,7 +24,7 @@ public class TwitterCardFilter  extends AbstractFilter {
     public static final Logger logger = LoggerFactory.getLogger(TwitterCardFilter.class);
 
     private final static String TWITTERCARD_MODULE="twitter-card";
-    private final static String TWITTERCARD_MIXIN="jmix:twitterCard";
+    private final static String TWITTERCARD_MIXIN="socialmix:twitterCard";
 
     @Activate
     public void activate() {
@@ -83,17 +83,17 @@ public class TwitterCardFilter  extends AbstractFilter {
         String hostname = getHostname(renderContext);
 
         JCRNodeWrapper currentNode = renderContext.getMainResource().getNode();
-        String twitterCard = currentNode.getPropertyAsString("social:twitterCardType");
-        String twitterSite = currentNode.getPropertyAsString("social:twitterSite");
-        String twitterTitle = currentNode.getPropertyAsString("social:twitterTitle");
-        String twitterDescription = currentNode.getPropertyAsString("social:twitterDescription");
-        String twitterCreator = currentNode.getPropertyAsString("social:twitterCreator");
-        String twitterAppIdiPhone = currentNode.getPropertyAsString("social:twitterAppIdiPhone");
-        String twitterAppIdiPad = currentNode.getPropertyAsString("social:twitterAppIdiPad");
-        String twitterAppIdGooglePlay = currentNode.getPropertyAsString("social:twitterAppIdGooglePlay");
-        String twitterPlayer = currentNode.getPropertyAsString("social:twitterPlayer");
-        String twitterPlayerWidth = currentNode.getPropertyAsString("social:twitterPlayerWidth");
-        String twitterPlayerHeight = currentNode.getPropertyAsString("social:twitterPlayerHeight");
+        String twitterCard = currentNode.getPropertyAsString("soc:twitterCardType");
+        String twitterSite = currentNode.getPropertyAsString("soc:twitterSite");
+        String twitterTitle = currentNode.getPropertyAsString("soc:twitterTitle");
+        String twitterDescription = currentNode.getPropertyAsString("soc:twitterDescription");
+        String twitterCreator = currentNode.getPropertyAsString("soc:twitterCreator");
+        String twitterAppIdiPhone = currentNode.getPropertyAsString("soc:twitterAppIdiPhone");
+        String twitterAppIdiPad = currentNode.getPropertyAsString("soc:twitterAppIdiPad");
+        String twitterAppIdGooglePlay = currentNode.getPropertyAsString("soc:twitterAppIdGooglePlay");
+        String twitterPlayer = currentNode.getPropertyAsString("soc:twitterPlayer");
+        String twitterPlayerWidth = currentNode.getPropertyAsString("soc:twitterPlayerWidth");
+        String twitterPlayerHeight = currentNode.getPropertyAsString("soc:twitterPlayerHeight");
 
 
         StringBuilder headScriptBuilder = new StringBuilder("\n<meta name=\"twitter:card\" content=\""+twitterCard+"\" />");
@@ -122,7 +122,7 @@ public class TwitterCardFilter  extends AbstractFilter {
             headScriptBuilder.append("\n<meta name=\"twitter:player:height\" content=\""+twitterPlayerHeight+"\" />");       
         
             try {
-            JCRNodeWrapper twitterImage = (JCRNodeWrapper) currentNode.getProperty("social:twitterImage").getNode();
+            JCRNodeWrapper twitterImage = (JCRNodeWrapper) currentNode.getProperty("soc:twitterImage").getNode();
             if(twitterImage != null){
                 String alt = twitterImage.getDisplayableName();
                 headScriptBuilder.append("\n<meta name=\"twitter:image\" content=\""+hostname+twitterImage.getUrl()+"\" />");
